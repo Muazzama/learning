@@ -34,7 +34,7 @@ def generate_combinations(data_size, choice):
                 combinations_list.append(match)
     elif choice == 'Adjective-Noun':
         for sentence in sample_data:
-            match = re.findall(r'((?:\w+ DET )?(?:\w+ ADJ )(?:\w+ NOUN ))', sentence)
+            match = re.findall(r'((?:\w+ ADJ )(?:\w+ NOUN ))', sentence)
             if match:
                 combinations_list.append(match)
     else:
