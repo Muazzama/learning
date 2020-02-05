@@ -10,6 +10,8 @@ path = os.getcwd()
 def load_data(sample_size):
     filename = '/app/dataset/final_dataset.tsv'
     df = pd.read_csv(path+filename, sep='\t', header=None, error_bad_lines=False)
+    print(len(set(df[0])))
+    print(set(df[0]))
     return random.sample(set(df[0]), sample_size)
 
 
