@@ -1,0 +1,7 @@
+pandas
+requests
+flask
+gunicorn
+pandas
+flask_cors
+spacy

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block title %}Generate Combinations{% endblock %}
+{% block content %}
+
+<div class="wrapper wrapper-content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="wrapper wrapper-content animated fadeInUp">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>Select combination you want to generate:</h5>
+            <div class="ibox-tools">
+            </div>
+          </div>
+          <div class="ibox-content">
+            <form id="form" action="{{url_for('generate')}}" method="post">
+              <div class="form-group">
+                <label for="choice">Select Combination</label>
+                <select class="form-control" id="choice" name="choice" required>
+                  <option value="Adjective-Noun">Adjective-Noun</option>
+                  <option value="Noun-Verb">Noun-Verb</option>
+                  <option value="Adjective-Noun-Verb">Adjective-Noun-Verb</option>
+                </select>
+                <br>
+                <label for="sample_size">Range</label>
+                <input type="text" class="form-control" id="sample_size" name="sample_size" placeholder="1-1000" required>
+                <br>
+                <button type="submit" class="btn btn-primary" onclick="form_submit()">Download Combinations</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block postscript %}
+<script>
+function form_submit() {
+    document.getElementById("form").submit();
+   }
+</script>
+{% endblock %}
